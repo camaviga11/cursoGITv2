@@ -1,4 +1,6 @@
-Comandos mas utilizados en GIT
+-------------------------------
+[Comandos mas utilizados en GIT]
+-------------------------------
 INICIO
 configurar email
 git config --global user.email “<email>”
@@ -110,8 +112,6 @@ RAMAS
 para mezclar ramas me ubico en la rama donde quiero que se obtengan los cambios
 git merge <a>
 a: nombre de la rama que quiero mezclar con la actual
-
-
 
 
 *******************
