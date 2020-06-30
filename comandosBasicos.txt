@@ -90,9 +90,9 @@ git reset --hard
 # Configurar otro editor
 git config --global core.editor "atom --wait"
 
- -------
-| Ramas |
- -------
+
+<<[Ramas ]>>
+
 
 # Crea una rama
 git branch <Nombre de la rama>
@@ -124,9 +124,9 @@ YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
 # Forzar el paso de una rama a otra, esto puede hacer borrar archivos
 git checkout -b <Nombre de la rama>
 
- +++++++++++++++++++++
-| Trabajo entre ramas |
- ---------------------
+
+<<[Trabajo entre ramas]>>
+
  
 # Mezclar ramas, debe estar para en la rama con el que quiero que se fusione, osea la rama que va a quedar
 git merge <nombre rama que quiero fusionar con la rama master, la rama que va a desaparecer>
@@ -155,9 +155,9 @@ git stash apply stash@{?}
 # Sacar un  cambio de una rama y moverla a otra
 git cherry-pick <Identificador del commit que quiero traer a la rama actual>
 
- ......
-|gitHub|
- ......
+
+<<[gitHub]>>
+
 
 #enlazar el repositorio con gitHub
 git remote add <origin> <direccion del repositorio de giHhub>
