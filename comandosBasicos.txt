@@ -1,6 +1,6 @@
-*******************
-| Comandos basicos|
--------------------
+********************************************
+| COMANDOS MAS USADOS EN GIT VERSION PASADA|
+--------------------------------------------
 # Para empezara trabajar en el repositosio en el cual estamos ubicados.
 git init
 
@@ -76,6 +76,7 @@ git reset --hard
 
 # Configurar otro editor
 git config --global core.editor "atom --wait"
+
  -------
 | Ramas |
  -------
@@ -113,6 +114,7 @@ git checkout -b <Nombre de la rama>
  +++++++++++++++++++++
 | Trabajo entre ramas |
  ---------------------
+ 
 # Mezclar ramas, debe estar para en la rama con el que quiero que se fusione, osea la rama que va a quedar
 git merge <nombre rama que quiero fusionar con la rama master, la rama que va a desaparecer>
 
