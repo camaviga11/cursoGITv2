@@ -1,3 +1,119 @@
+Comandos mas utilizados en GIT
+INICIO
+configurar email
+git config --global user.email “<email>”
+configurar nombre de usuario de la computadora
+git config --global user.name “<nombre del usuario>”
+configurar colores de git 
+git config --global color.ui true
+git config --global core.editor <neovim,atom.  --wait>
+
+WORKING DIRECTORY
+inicializar un repositorio para trabajar con git
+git init
+git init <a>
+a: nombre de la carpeta donde del proyecto que quiero crear e inicializar
+Para ver el estado del repositorio
+git status
+git add <a>
+a: nombre del archivo a pasar al stage
+
+git add ./git add -A : guarda todos los archivos que esten listos para pasar al stage
+git add -n <a>
+a: mirar si el aechivo existe
+
+STAGE
+git restore --staged <a>
+a: nombre del archivo que quiero borrar de stage
+git rm --cached <a>
+a: nombre del archivo que quiero borrar del stage
+git rm -f <a>
+a: nombre del archivo que quiero borrar definitivamente
+pasar del stage al repositorio local
+git commit -m "<mensaje del commit>"
+corregir el commit anterior
+git commit --amend
+git commit --amend -m "<nuevo mensaje>"
+ver la linea de commits
+git log
+ver la linea de commits resumidos
+git log --oneline 
+ver el grafico de la linea de los commits
+git log --oneline --graph/git log --oneline --graph --all
+ver un numero determinado de comits
+git log -<2>
+
+TAGS ETIQUETAS 
+ligeras
+git tag <a>
+a: la version en numeros del proyecto
+anotadas
+git tag -a <0.5> -m "<a>"
+a: mensaje del etiquetado EJ: Punto de partida del proyecto
+git tag <a><SHA-1> 
+a: version ej. 1.0.1
+git tag <0.0> <0907438f08d7ae3fdd87ede12f18837bcc1afa9d>
+git tag <a><SHA-1> -m <b>
+a:version ej. 1.0.1
+b:mensaje del tag
+git tag <0.0> <0907438f08d7ae3fdd87ede12f18837bcc1afa9d> -m "<Punto de partida del proyecto>"
+lista los tags
+git tag -l 
+borrar un tag
+git tag -d <a>
+a:version del tag que quiero borrar
+renombrar un tag
+git tag -f -a 0.5 -m "hasta el comando commit" 84fb8bdbce746c5a497714b68ae450fb9fdd54fb
+
+DIFERENCIAS
+ver las diferencias de la ubicacion actual con el HASH especificado
+git diff <SHA1>
+comparar especificando los dos puntos, se pueden ivertir el orden de comparacion
+git diff <SHA1><SHA1>
+RESET SUAVE SOFT
+resetear los cambios y dejarlos en el stage
+git reset --soft <a>
+a: SHA1,a partir de este punto se van a borrar los comits este SAH1 queda como head
+pasar del repositorio local al area de trabajo sin pasar por el stage
+git reset --mixed <a>
+a: SHA1 a partir de este punto se borran los cambios y todo queda en el area de trabajo
+
+RESET DURO PELIGROSO HARD
+git reset --hard esto borra definitivamente los archivos que esten en la jurisdiccion e GIT
+
+git reset --hard <a>
+a: SHA1 se va hasta ese punto y borra todo lo demas definitivamente , es mejor antes de utilizarlo listar los SAH1 de los comits antes de ejecutarlo y no cerrarla hasta estar seguros.
+
+RAMAS 
+crear una rama
+git branch <a>
+a: nombre de la rama que quiero crear
+listar las ramas 
+git branch -l
+borrar rama
+git branch -d <a>
+a: nombre de la rama a borrar
+forzar el borrado de una rama 
+git branch -D <a>
+a: nombre de la rama  borrar
+renombrar rama 
+git branch -m <a><b>
+a:nombre de la rama que quiero renombrar
+b:nuevo nombre de la rama
+cambiar entre ramas 
+git checkout <a>
+a:nombre de la rama a la que quiero ir
+git checkout -b <a>
+a: nombre de la nueva rama a crear y a la que se mueve al mismo tiempo
+-----------------------------------------
+RAMAS 
+para mezclar ramas me ubico en la rama donde quiero que se obtengan los cambios
+git merge <a>
+a: nombre de la rama que quiero mezclar con la actual
+
+
+
+
 *******************
 | Comandos basicos|
 -------------------
