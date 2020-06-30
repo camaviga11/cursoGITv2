@@ -1,15 +1,19 @@
-CONCEPTOS BASICOS
+<<[CONCEPTOS BASICOS]>>
 
 TIPOS DE SISTEMAS DE CONTROL DE VERSIONES
 Local: Esta solo en el computador donde estamos, si el PC se daña se puede perder todo.
 Centralizado: Los cambios se guardan en un servidor, el servidor reparte copias a cada usuario, el problema es que si se daña el servidor se pierde todo igual.
 Distribuidos:  Cada uno de los usuarios tiene una copia de todo el proyecto, si alguien lo daña puede pedir una copia a los demas, son espejos del proyecto
 
+<<[======================================]>>
+    <<[==============================]>>
+        <<[======================]>>
+            <<[==============]>>
+                 <<[======]>>
+                    <<[]>>
 
-________________________________________________________________________________________________________________________________________________
-********************************************
-| COMANDOS MAS USADOS EN GIT VERSION PASADA|
---------------------------------------------
+<<[COMANDOS MAS USADOS EN GIT VERSION PASADA ]>>
+
 # Para empezara trabajar en el repositosio en el cual estamos ubicados.
 git init
 
