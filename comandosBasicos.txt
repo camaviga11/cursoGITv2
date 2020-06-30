@@ -6,7 +6,7 @@ configurar email
 git config --global user.email “<email>”
 configurar nombre de usuario de la computadora
 git config --global user.name “<nombre del usuario>”
-configurar colores de git 
+configurar colores de git
 git config --global color.ui true
 git config --global core.editor <neovim,atom.  --wait>
 
@@ -39,20 +39,20 @@ git commit --amend -m "<nuevo mensaje>"
 ver la linea de commits
 git log
 ver la linea de commits resumidos
-git log --oneline 
+git log --oneline
 ver el grafico de la linea de los commits
 git log --oneline --graph/git log --oneline --graph --all
 ver un numero determinado de comits
 git log -<2>
 
-TAGS ETIQUETAS 
+TAGS ETIQUETAS
 ligeras
 git tag <a>
 a: la version en numeros del proyecto
 anotadas
 git tag -a <0.5> -m "<a>"
 a: mensaje del etiquetado EJ: Punto de partida del proyecto
-git tag <a><SHA-1> 
+git tag <a><SHA-1>
 a: version ej. 1.0.1
 git tag <0.0> <0907438f08d7ae3fdd87ede12f18837bcc1afa9d>
 git tag <a><SHA-1> -m <b>
@@ -60,7 +60,7 @@ a:version ej. 1.0.1
 b:mensaje del tag
 git tag <0.0> <0907438f08d7ae3fdd87ede12f18837bcc1afa9d> -m "<Punto de partida del proyecto>"
 lista los tags
-git tag -l 
+git tag -l
 borrar un tag
 git tag -d <a>
 a:version del tag que quiero borrar
@@ -86,49 +86,61 @@ git reset --hard esto borra definitivamente los archivos que esten en la jurisdi
 git reset --hard <a>
 a: SHA1 se va hasta ese punto y borra todo lo demas definitivamente , es mejor antes de utilizarlo listar los SAH1 de los comits antes de ejecutarlo y no cerrarla hasta estar seguros.
 
-RAMAS 
+RAMAS
 crear una rama
 git branch <a>
 a: nombre de la rama que quiero crear
-listar las ramas 
+listar las ramas
 git branch -l
 borrar rama
 git branch -d <a>
 a: nombre de la rama a borrar
-forzar el borrado de una rama 
+forzar el borrado de una rama
 git branch -D <a>
 a: nombre de la rama  borrar
-renombrar rama 
+renombrar rama
 git branch -m <a><b>
 a:nombre de la rama que quiero renombrar
 b:nuevo nombre de la rama
-cambiar entre ramas 
+cambiar entre ramas
 git checkout <a>
 a:nombre de la rama a la que quiero ir
 git checkout -b <a>
 a: nombre de la nueva rama a crear y a la que se mueve al mismo tiempo
 -----------------------------------------
-RAMAS 
+RAMAS
 para mezclar ramas me ubico en la rama donde quiero que se obtengan los cambios
 git merge <a>
 a: nombre de la rama que quiero mezclar con la actual
 
+<<[CONCEPTOS BASICOS]>>
 
-*******************
-| Comandos basicos|
--------------------
+TIPOS DE SISTEMAS DE CONTROL DE VERSIONES
+Local: Esta solo en el computador donde estamos, si el PC se daña se puede perder todo.
+Centralizado: Los cambios se guardan en un servidor, el servidor reparte copias a cada usuario, el problema es que si se daña el servidor se pierde todo igual.
+Distribuidos:  Cada uno de los usuarios tiene una copia de todo el proyecto, si alguien lo daña puede pedir una copia a los demas, son espejos del proyecto
+
+<<[======================================]>>
+    <<[==============================]>>
+        <<[======================]>>
+            <<[==============]>>
+                 <<[======]>>
+                    <<[]>>
+
+<<[COMANDOS MAS USADOS EN GIT VERSION PASADA ]>>
+
 # Para empezara trabajar en el repositosio en el cual estamos ubicados.
 git init
 
-#Crea una carpeta e inicia Git en esa carpeta 
-git init <Nombre de la carpeta> 
+#Crea una carpeta e inicia Git en esa carpeta
+git init <Nombre de la carpeta>
 
 # ver el estado de los archivos en git
 git status
 
 #Pasar del working directory al staging area
 git add <nombre del archivo> # Agrega solo el arcchivo que especificamos
-git add . # Sube todos los archivos que esten pendientes por seguir 
+git add . # Sube todos los archivos que esten pendientes por seguir
 git add -A # Sube todos los archivos que esten pendientes por seguir
 
 # Borrar archivos
@@ -139,11 +151,11 @@ git rm -f <nombre del archivo> borra los archivos del computador
 git config --global user.name "Nombre del usuario" # Para ingresar el nombre de usuario que va a trabajar en un equipo
 git config --global user.email "correo electronico" # Para poner el correo electronico de ese usuario
 
-# Editar un commit 
+# Editar un commit
 git commit --amend -m "mensaje" # editar un commit anterior y su mensaje
 
-git commit -m "first commit" # parar de agregar del area temporal a repositorio local 
-git remote add origin https://github.com/camaviga11/cursoGit.git # Enlazar con el repositorio de GitHub 
+git commit -m "first commit" # parar de agregar del area temporal a repositorio local
+git remote add origin https://github.com/camaviga11/cursoGit.git # Enlazar con el repositorio de GitHub
 git push -u origin master #Subir los archivos al repositorio, esto se hace uno vez
 
 #Crear etiquetas tags versiones de un programa
@@ -192,6 +204,7 @@ git reset --hard
 
 # Configurar otro editor
 git config --global core.editor "atom --wait"
+
  -------
 | Ramas |
  -------
@@ -205,7 +218,7 @@ git branch -l
 #eliminar rama
 git branch -d <nombre de la rama>
 
-#Forzar borrado de rama 
+#Forzar borrado de rama
 git branch -D <nombre de la rama>
 
 # Renombrar rama
@@ -229,6 +242,7 @@ git checkout -b <Nombre de la rama>
  +++++++++++++++++++++
 | Trabajo entre ramas |
  ---------------------
+
 # Mezclar ramas, debe estar para en la rama con el que quiero que se fusione, osea la rama que va a quedar
 git merge <nombre rama que quiero fusionar con la rama master, la rama que va a desaparecer>
 
@@ -283,5 +297,5 @@ git pull origin master
 #subir cambios al repositorio remoto
 git push <origin> <a la rama que quiero subir el cambio "master">
 
-#enviar los tags 
-git push <origin> <a la rama que quiero subir el cambio "master"> --tags 
+#enviar los tags
+git push <origin> <a la rama que quiero subir el cambio "master"> --tags
