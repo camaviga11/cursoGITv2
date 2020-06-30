@@ -1,0 +1,171 @@
+*******************
+| Comandos basicos|
+-------------------
+# Para empezara trabajar en el repositosio en el cual estamos ubicados.
+git init
+
+#Crea una carpeta e inicia Git en esa carpeta 
+git init <Nombre de la carpeta> 
+
+# ver el estado de los archivos en git
+git status
+
+#Pasar del working directory al staging area
+git add <nombre del archivo> # Agrega solo el arcchivo que especificamos
+git add . # Sube todos los archivos que esten pendientes por seguir 
+git add -A # Sube todos los archivos que esten pendientes por seguir
+
+# Borrar archivos
+git restore --staged <nombre del archivo> borra los arcchivos del staging area
+git rm -f <nombre del archivo> borra los archivos del computador
+
+
+git config --global user.name "Nombre del usuario" # Para ingresar el nombre de usuario que va a trabajar en un equipo
+git config --global user.email "correo electronico" # Para poner el correo electronico de ese usuario
+
+# Editar un commit 
+git commit --amend -m "mensaje" # editar un commit anterior y su mensaje
+
+git commit -m "first commit" # parar de agregar del area temporal a repositorio local 
+git remote add origin https://github.com/camaviga11/cursoGit.git # Enlazar con el repositorio de GitHub 
+git push -u origin master #Subir los archivos al repositorio, esto se hace uno vez
+
+#Crear etiquetas tags versiones de un programa
+git tag -a <version1.0> -m "mensaje"
+git tag <nombre del tag> <numero identificador del commit>
+
+#ver la lista de tags
+git tag -l
+
+#eliminar un tag
+git tag -d <nombre del tag>
+
+#renombrar un tag
+git tag -f -a <Nombre de la version> -m "mensaje" <identidficador del commit 3404cf2>
+
+#Ver el listado de commits y los identificadores
+git log
+
+#Ver la lista de identificadores mas resumida
+git log --oneline
+
+#Ver la lista de identificadores mas resumida y graficos
+git log --oneline --graph
+
+#ver el numero de commits que quiero ver con log
+git log -<numero de commits que quiero ver>
+git log --oneline -<numero de commits que quiero ver>
+
+#ver diferencias entre el el ultimo commit y el estado actual den steging area
+git diff <identificador del commit>
+
+#Ver diferencias entre commits
+git diff <identificador de comits> <Identificador del commit>
+
+# Quita el archivo especificado del staging area
+git reset <nombre del archivo>
+
+# Resetear un commit a partir del identificador que especifiquemos, no elimina los arcchivos los deja en el staging area
+git reset --soft <identificador de comits>
+
+# Restaura el commit a partir del identificador que especifiquemos, no elimina los arcchivos los deja en el working directory
+git reset --mixed <identificador de commid>
+
+# Borra los archivos del computador, se mueve en el tiempo si tienes las lista de los HASH
+git reset --hard
+
+# Configurar otro editor
+git config --global core.editor "atom --wait"
+ -------
+| Ramas |
+ -------
+
+# Crea una rama
+git branch <Nombre de la rama>
+
+# Listar las ramas
+git branch -l
+
+#eliminar rama
+git branch -d <nombre de la rama>
+
+#Forzar borrado de rama 
+git branch -D <nombre de la rama>
+
+# Renombrar rama
+git branch -m <Nombre de la rama> <Nombre de la rama>
+
+# moverse entre ramas
+git checkout <Nombre de la rama>
+
+# Moverse entre identificadores de commits
+git checkout <identificador del commit>
+
+# Crear la rama y moverse en ella
+git checkout -b <Nombre de la rama>
+
+YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+|||||||||||||||||||||||||||||||||
+
+# Forzar el paso de una rama a otra, esto puede hacer borrar archivos
+git checkout -b <Nombre de la rama>
+
+ +++++++++++++++++++++
+| Trabajo entre ramas |
+ ---------------------
+# Mezclar ramas, debe estar para en la rama con el que quiero que se fusione, osea la rama que va a quedar
+git merge <nombre rama que quiero fusionar con la rama master, la rama que va a desaparecer>
+
+# Evitar bifurcaciones en la linea de diseño
+git rebase <Nombre de la rama que voy a fusionar>
+
+# Evitar bifurcaciones en la linea de diseño interactivamente
+git rebase -i <Nombre de la rama que voy a fusionar>
+
+#guardar cambios temporales para no tener que hacer commits si voy a trabajar en otra rama
+git stash
+
+#mostrar la lista de stash
+git stash list
+
+# eliminar stash
+git stash drop stash@{?}
+
+# Aplicar cambios al ultimo stash que cree
+git stash apply
+
+# Aplicar cambios en un stash
+git stash apply stash@{?}
+
+# Sacar un  cambio de una rama y moverla a otra
+git cherry-pick <Identificador del commit que quiero traer a la rama actual>
+
+ ......
+|gitHub|
+ ......
+
+#enlazar el repositorio con gitHub
+git remote add <origin> <direccion del repositorio de giHhub>
+
+#ver si el repositorio esta enlazado
+git remote -v
+
+#remover el enlace del repositorio
+git remote remove <origin>
+
+#camino 1
+#Trear los cambios del repositorio remoto
+git fetch <origin> <nombre de la rama "master">
+
+#si aparece un error "refusing to merge unrelated histories"
+git merge <ruta de la rama descargada>
+
+#camino 2
+#Trear los cambios del repositorio remoto
+git pull origin master
+
+#subir cambios al repositorio remoto
+git push <origin> <a la rama que quiero subir el cambio "master">
+
+#enviar los tags 
+git push <origin> <a la rama que quiero subir el cambio "master"> --tags 
